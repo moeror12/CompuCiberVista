@@ -1,0 +1,52 @@
+<div class="container">
+  <section class="main">
+    <h2>"Somos una tienda especialistas <br> en distintos equipos de computo"</h2>
+    <img src="https://www.nanoits.com/images_local/slide-kc-rentas-001b.png" alt="">
+  </section>
+
+  <section class="most-sold">
+    <h2>Productos más vendidos</h2>
+    <div class="images-grid">
+      <div class="images" *ngFor="let product of mostSellerProducts">
+        <a [routerLink]="['./producto', product.productoId]">
+          <img [src]="product.foto" alt="">
+        </a>
+        <h3>{{ product.nombre }}</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="marcas">
+    <h2>Marcas</h2>
+    <div class="images-grid">
+      <div class="images">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="">
+        <h3>HP</h3>
+      </div>
+      <div class="images">
+        <img src="https://dlcdnimgs.asus.com/websites/global/Sno/79183.jpg" alt="">
+        <h3>Asus</h3>
+      </div>
+      <div class="images">
+        <img src="https://scontent.flim41-1.fna.fbcdn.net/v/t1.6435-9/109764302_3289428621149720_6353557589794353911_n.png?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=N08l5mamE9cAX9Hkyyj&_nc_ht=scontent.flim41-1.fna&oh=00_AfD6Wb2svhetSZE2DnBGrWEmJ6jxA_2NpUodUrBhGDlTNA&oe=6493A819" alt="">
+        <h3>Apple</h3>
+      </div>
+      <div class="images">
+        <img src="https://1000marcas.net/wp-content/uploads/2020/01/Logo-Lenovo.png" alt="">
+        <h3>Lenovo</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="last-products">
+    <h2>Últimos productos</h2>
+    <div class="images-grid">
+      <div class="images" *ngFor="let product of lastProducts">
+        <a [routerLink]="['./producto', product.productoId]">
+          <img [src]="product.foto" alt="">
+        </a>
+        <h3>{{ product.nombre }}</h3>
+      </div>
+    </div>
+  </section>
+</div>

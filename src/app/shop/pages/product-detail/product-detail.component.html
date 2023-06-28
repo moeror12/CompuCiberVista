@@ -1,0 +1,25 @@
+<div class="container">
+  <img [src]="product.foto" alt="">
+  <div>
+    <b>{{ product.categoria }}</b>
+    <h2>{{ product.nombre }}</h2>
+    <p>{{ product.descripcion }}</p>
+    <p>Precio: S/{{ product.precio }}</p>
+
+    <form class="form">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Cantidad</mat-label>
+        <input matInput type="number" [(ngModel)]="cantidad" name="cantidad">
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="addProductToCart(product)"
+        type="button"
+        [disabled]="(cantidad === 0) || (!cantidad) || (cantidad < 0)"
+      >
+        Añadir
+      </button>
+    </form>
+  </div>
+</div>

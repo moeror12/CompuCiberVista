@@ -1,0 +1,18 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ product.nombre }}</mat-card-title>
+    <mat-card-subtitle>{{ product.categoria }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="product.foto" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      Disfruta de la alta tecnologia con una nueva y mejorada {{ product.categoria }}.
+      Pruebala y disfruta su maximo rendimiento.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a [routerLink]="['../producto', product.productoId]" mat-button>Ver Detalle</a>
+    <button (click)="addProductToCart(product)" mat-raised-button color="primary">Añadir</button>
+  </mat-card-actions>
+</mat-card>

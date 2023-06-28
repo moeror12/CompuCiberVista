@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="container">
+      <div>
+        <h1>Compu Ciber</h1>
+        <a routerLink="">Inicio</a>
+        <a routerLink="productos">Productos</a>
+        <a routerLink="contactanos">Contáctanos</a>
+        <a routerLink="inicio-sesion" *ngIf="!(login$ | async)">Inicio Sesión</a>
+        <button class="salir" mat-button (click)="logout()" *ngIf="(login$ | async)">Salir</button>
+      </div>
+      <a routerLink="carrito" [matBadge]="(myCart$ | async)?.length" matBadgeColor="accent" mat-icon-button
+        class="example-icon" matBadgeSize="small" aria-label="Example icon-button with menu icon">
+        <mat-icon>shopping_cart</mat-icon>
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

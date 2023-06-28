@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <h1>Productos</h1>
+  <div class="category-filter">
+    <mat-form-field>
+      <mat-label>Filtrar por Categoria</mat-label>
+      <mat-select (selectionChange)="selectCategory($event.value)">
+        <mat-option *ngFor="let category of categories" [value]="category.categoriaId">
+          {{ category.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="products-container">
+    <app-product
+      *ngFor="let product of productsFiltered"
+      [product]="product"
+    ></app-product>
+  </div>
+</div>

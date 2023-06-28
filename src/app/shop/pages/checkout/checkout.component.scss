@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .layout {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    .details {
+      width: 350px;
+
+      h2 {
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+
+    .order {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+
+      h2 {
+        text-align: center;
+      }
+
+      .table-container {
+        width: 100%;
+      }
+
+      form {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #pay {
+        align-self: center;
+      }
+    }
+  }
+
+}

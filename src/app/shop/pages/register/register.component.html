@@ -1,0 +1,71 @@
+<section class="wrapper">
+  <div class="register-container">
+    <h2>Registrate</h2>
+
+    <form [formGroup]="form" (ngSubmit)="save($event)">
+
+      <div class="two-columns">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" type="text">
+          <mat-error *ngIf="nombreField?.hasError('required')">
+            Nombre es requerido
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="apellido" type="text">
+          <mat-error *ngIf="apellidoField?.hasError('required')">
+            Apellido es requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill" class="address">
+        <mat-label>Dirección</mat-label>
+        <input matInput formControlName="direccion" type="text">
+        <mat-error *ngIf="direccionField?.hasError('required')">
+          Direccion es requerido
+        </mat-error>
+      </mat-form-field>
+
+      <div class="two-columns">
+        <mat-form-field appearance="fill">
+          <mat-label>DNI</mat-label>
+          <input matInput formControlName="dni" type="number">
+          <mat-error *ngIf="dniField?.hasError('required')">
+            DNI es requerido
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Correo</mat-label>
+          <input matInput formControlName="correo" type="email">
+          <mat-error *ngIf="correoField?.hasError('required')">
+            Correo es requerido
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="two-columns">
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="contrasenia" type="password" autocomplete="new-password">
+          <mat-error *ngIf="contraseniaField?.hasError('required')">
+            Contraseña es requerido
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Confirmar contraseña</mat-label>
+          <input matInput formControlName="confirmarContrasenia" type="password" autocomplete="new-password">
+        </mat-form-field>
+      </div>
+
+      <button type="submit" mat-raised-button color="primary">Registrarse</button>
+    </form>
+
+    <p>¿Ya tienes cuenta? <a routerLink="/inicio-sesion">Inicia sesión</a></p>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section class="wrapper">
+  <div class="login-container">
+    <h2>Inicia sesión</h2>
+
+    <form [formGroup]="form" (ngSubmit)="login($event)">
+      <mat-form-field appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="correo">
+        <mat-error *ngIf="correoField?.hasError('required')">
+          Correo es requerido
+        </mat-error>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="contrasenia" type="password" autocomplete="new-password">
+        <mat-error *ngIf="contraseniaField?.hasError('required')">
+          Contraseña es requerido
+        </mat-error>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary">Iniciar sesión</button>
+    </form>
+
+    <p>¿Aún no tienes cuenta?</p>
+    <p>Registrate <a routerLink="/registro">aquí</a></p>
+  </div>
+
+</section>

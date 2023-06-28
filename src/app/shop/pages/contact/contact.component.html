@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="contact--container">
+    <h2>Contáctanos</h2>
+    <form [formGroup]="form" (ngSubmit)="save($event)">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre y apellido</mat-label>
+        <input matInput type="text" formControlName="nombreapellido">
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput type="email" formControlName="correo">
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Asunto</mat-label>
+        <input matInput type="text" formControlName="asunto">
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput formControlName="mensaje"></textarea>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary">Enviar</button>
+    </form>
+  </div>
+</div>
